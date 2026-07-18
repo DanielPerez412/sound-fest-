@@ -1,15 +1,13 @@
-require("dotenv").config();
-
 const mysql = require("mysql2/promise");
 
 const pool = mysql.createPool({
-  host: process.env.DB_HOST || "localhost",
-  port: Number(process.env.DB_PORT || 3306),
-  user: process.env.DB_USER || "root",
-  password: process.env.DB_PASSWORD || "",
-  database: process.env.DB_NAME || "soundfest_db",
+  host: "localhost",
+  port: 3306,
+  user: "root",
+  password: "1234", 
+  database: "soundfest_db",      
   waitForConnections: true,
-  connectionLimit: Number(process.env.DB_CONNECTION_LIMIT || 10),
+  connectionLimit: 10,
   queueLimit: 0,
 });
 

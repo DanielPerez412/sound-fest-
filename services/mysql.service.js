@@ -1,2 +1,6 @@
-// Backwards-compatible export for the DAO layer. The shared pool lives in config.
+const mysql = require('mysql2/promise');
+const config = require('../env/mysqlConfig');
+
+const pool = mysql.createPool(config);
+
 module.exports = require("../config/database");
